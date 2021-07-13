@@ -36,5 +36,32 @@
             <p id="projects"></p>
         </div>
       </div>
+
+      <script type="text/javascript">
+        fetch("https://api.github.com/users/Sisamgtm07")
+       .then((res) => res.json())
+       .then((data) =>{
+           document.querySelector("#profile_img").src = data['avatar_url'];
+           document.querySelector("#name").innerHTML = data['name'];
+           document.querySelector("#bio").innerHTML = data['bio']; 
+           document.querySelector("#username").innerHTML = data['login'];
+           document.querySelector("#followers").innerHTML = data['followers'];
+           document.querySelector("#follow").href = data['html_url'];
+           document.querySelector("#main").hidden = false;
+           document.querySelector("#loader").hidden = true;
+       })
+   
+       fetch("https://api.github.com/users/Sisamgtm07/repos")
+       .then((res) => res.json())
+       .then((data) => {
+           let repo = '';
+           for (var i = 0; i < data.length; i++) {
+           repo += `${data[i]['name']} <br>`;
+           }
+               document.querySelector('#projects').innerHTML = repo;
+               document.querySelector('.repo').hidden = false;
+       })
+       
+       </script>
 </body>
 </html>
