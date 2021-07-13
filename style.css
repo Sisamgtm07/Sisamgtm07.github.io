@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+p{
+    line-height: 1.4em;
+}
+#loader{
+        height: 0;
+        width: 0;
+        padding: 30px;
+        border: 6px solid rgb(181, 211, 228);
+        border-right-color: rgb(53, 116, 153);
+        border-radius: 50%;
+        animation: rotate 1s infinite linear;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+      
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+}
+
+#main{
+    padding: 20px 40px;
+}
+#main .main__descp{
+    margin: auto;
+}
+.main__descp p{
+    color: grey;
+}
+
+.main__descp #followers{
+    font-weight: 600;
+}
+#name{
+    padding-top: 10px;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+#username{
+    font-size: .9rem;
+    color: grey;
+    font-weight:400;
+    padding-bottom: 8px;
+
+}
+#bio{
+    color: rgb(85, 85, 85);
+    font-weight: 500;
+    letter-spacing: .1em;
+    font-size: 1.1rem;
+
+}
+.title{
+    padding-bottom: 20px;
+}
+a{
+    text-decoration: none;
+    font-weight: 500;
+}
+#projects{
+    line-height: 2em;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .flex-item-left {
+    padding: 10px;
+    flex: 33.33%;
+  }
+  .flex-item-center {
+    padding: 10px;
+    flex: 33.33%;
+  }
+  .flex-item-right {
+    padding: 10px 40px;
+    flex: 33.33%;
+  }
+  
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  }
